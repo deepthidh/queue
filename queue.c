@@ -55,3 +55,13 @@ Queue* queue_delete(Queue *q,Queue_Result *res)
     assert(res->status == QUEUE_OK || q->count ==0);
     return q;
 }
+
+void queue_display(Queue *q)
+{
+	assert(q!=NULL);
+	
+	while(q->head!=q->count){	
+    		printf("%d ", q->data[q->head]);
+    		++q->head;
+	}
+}
